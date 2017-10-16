@@ -26,7 +26,8 @@ export const customerReducer = (state=initialState, action) => {
                         seat: action.seat,
                         wgt: 150, 
                         gender: action.gender, 
-                        startTime: Date.now(),
+                        timeIn: Date.now(),
+                        bac: 0.0,
                         drinks: [] 
                     }
                 ]

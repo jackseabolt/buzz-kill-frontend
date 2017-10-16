@@ -1,11 +1,14 @@
-import React from 'react'; 
+import React from 'react';
+import { addUser } from '../actions';
+import { connect } from 'react-redux'; 
 
-export default class NewCustomerForm extends React.Component {
+
+export class NewCustomerForm extends React.Component {
     handleFormSubmit(event) {
         event.preventDefault(); 
-        console.log("handleFormSubmit ran"); 
-        const { gender } = this.form; 
-        console.log(gender.value)
+        console.log("handleFormSubmit ran");
+        const {gender} = this.form;
+        this.props.dispatch(addUser(this.nameInput.value, this.tableInput.value, this.seatInput.value, gender.value)); 
         this.nameInput.value = ''; 
         this.tableInput.value = '';
         this.seatInput.value = ''; 
@@ -26,3 +29,9 @@ export default class NewCustomerForm extends React.Component {
         )
     }
 }
+
+export const mapStateToProps = state => ({
+
+}); 
+
+export default connect(mapStateToProps)(NewCustomerForm); 
