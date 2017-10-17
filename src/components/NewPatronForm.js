@@ -18,6 +18,7 @@ export class NewCustomerForm extends React.Component {
         this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value)); 
         this.tableInput.value = '';
         this.seatInput.value = ''; 
+        this.handleFormToggle();
     }
     handleFormToggle(){
         this.setState({formDisplayed: !this.state.formDisplayed})
