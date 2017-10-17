@@ -12,10 +12,11 @@ export class Board extends React.Component {
     render() {
         const patronList = this.props.patrons.map((patron, idx) => (
             <Patron
-                start={patron.start}
+                timeOnSite={patron.timeOnSite}
                 table={patron.table}
                 seat={patron.seat}
                 bac={patron.bac}
+                id={patron.id}
                 key={idx} />
         )); 
 

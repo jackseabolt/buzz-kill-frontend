@@ -36,17 +36,17 @@ export default class Patron extends React.Component {
         if(this.state.formDisplayed){
             return (
                 <div className={color}>
-                    <UpdatePatronForm handleFormToggle={() => this.handleFormToggle()}/>
+                    <UpdatePatronForm patronId={this.props.id} handleFormToggle={() => this.handleFormToggle()}/>
                 </div>
             )
         }
         return (
             <div className={color}>
                 <p>BAC: {this.props.bac}</p>
-                <p>START: {this.props.start}</p>
+                <h4>TIME ON SITE: {this.props.timeOnSite}</h4>
                 <p>TABLE: {this.props.table}</p>
                 <p>SEAT: {this.props.seat}</p>
-                <button onClick={() => this.handleFormToggle()} >Add Drink</button>
+                <button className="button" onClick={() => this.handleFormToggle()} >Add Drink</button>
             </div>
         )
     }
