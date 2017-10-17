@@ -33,6 +33,11 @@ export default class Patron extends React.Component {
             color='level5 patron';
         }
 
+        const drinkDisplay = this.props.drinks.map(drink => (
+            <i class="fa fa-beer" aria-hidden="true"></i>
+        ))
+
+
         if(this.state.formDisplayed){
             return (
                 <div className={color}>
@@ -46,7 +51,9 @@ export default class Patron extends React.Component {
                 <h4>TIME ON SITE: {this.props.timeOnSite}</h4>
                 <p>TABLE: {this.props.table}</p>
                 <p>SEAT: {this.props.seat}</p>
-                <button className="button" onClick={() => this.handleFormToggle()} >Add Drink</button>
+                {/* <p>DRINKS: {this.props.drinks}</p> */}
+                {drinkDisplay}
+                <i className="fa fa-plus-circle" onClick={() => this.handleFormToggle()} aria-hidden="true"></i>
             </div>
         )
     }

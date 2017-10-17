@@ -17,7 +17,8 @@ export class Board extends React.Component {
                 seat={patron.seat}
                 bac={patron.bac}
                 id={patron.id}
-                key={idx} />
+                key={idx} 
+                drinks={patron.drinks} />
         )); 
 
         return (
@@ -31,8 +32,6 @@ export class Board extends React.Component {
 export const mapStateToProps = state => ({
     patrons: state.patrons
 }); 
-
-
 
 export default connect(mapStateToProps)(Board); 
 

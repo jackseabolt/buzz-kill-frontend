@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux'; 
 import { addDrink } from '../actions'; 
 
-
 export class UpdatePatronForm extends React.Component {
     handleForm(event) {
         event.preventDefault(); 
@@ -13,8 +12,10 @@ export class UpdatePatronForm extends React.Component {
         event.preventDefault(); 
         const quantity = this.input.value;
         const id = this.props.patronId;
+        console.log(`Here is the id: ${id}`)
         this.props.dispatch(addDrink(quantity, id))
     }
+
     render() {
         return (
             <div className="updatePatronForm">

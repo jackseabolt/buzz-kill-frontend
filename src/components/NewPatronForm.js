@@ -11,6 +11,7 @@ export class NewCustomerForm extends React.Component {
             formDisplayed: false
         }
     }
+    
     handleFormSubmit(event) {
         event.preventDefault(); 
         console.log("handleFormSubmit ran");
@@ -20,6 +21,7 @@ export class NewCustomerForm extends React.Component {
         this.seatInput.value = ''; 
         this.handleFormToggle();
     }
+
     handleFormToggle(){
         this.setState({formDisplayed: !this.state.formDisplayed})
     }

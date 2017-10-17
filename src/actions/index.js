@@ -30,7 +30,8 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
     })
     .then(patron => {
         console.log(patron);
-        dispatch(patronAdded(patron.table, patron.seat, patron.gender, patron.start))
+        dispatch(getPatrons()); 
+        // dispatch(patronAdded(patron.table, patron.seat, patron.gender, patron.start))
     })
 }; 
 
@@ -53,8 +54,7 @@ export const getPatrons = () => dispatch => {
 }
 
 export const ADD_DRINK = 'ADD_DRINK'; 
-export const addDrink = (quantity, patronId) => dispatch => {
-    
+export const addDrink = (quantity, patronId) => dispatch => { 
     return fetch(`http://localhost:8080/api/drinks/${patronId}`, {
         method: 'PUT', 
         body: JSON.stringify({
@@ -69,7 +69,18 @@ export const addDrink = (quantity, patronId) => dispatch => {
         if(!res.ok){
             return Promise.reject(res.statusText)
         }
-        console.log("addDrink got the end")
-        return res.json()
+        console.log(res.body)
+        return res.json(); 
+    })
+    .then(patron => {
+        console.log(patron)
+        dispatch(getPatrons()); 
     })
 }; 
+
+export const UPDATE_PATRON = 'UPDATE_PATRON'; 
+export const updatePatron = (patron) => ({
+    type: UPDATE_PATRON, 
+    bac: patron.bac, 
+    id: patron.id
+})

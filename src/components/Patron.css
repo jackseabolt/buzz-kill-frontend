@@ -1,10 +1,15 @@
+.fa{
+    font-size: 25px;
+    margin-left: 10px;
+}
+
 .patron {
     border: 1px solid grey; 
     color: white; 
     margin-bottom: 10px; 
     margin-top: 10px; 
     padding-top: 20px; 
-    padding-bottom: 20px; 
+    padding-bottom: 30px; 
 }
 
 .level1 {
