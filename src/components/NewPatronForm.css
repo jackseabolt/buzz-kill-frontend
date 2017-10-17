@@ -1,0 +1,35 @@
+.button {
+    display: block; 
+    color: white; 
+    padding: 10px 15px; 
+    border: 0px;
+    font-size: 14px;  
+    background-color: #373844; 
+    border-radius: 5px; 
+    margin: auto;   
+}
+
+.input {
+    width: 30%; 
+    padding: 6px 9px; 
+    border: 1px solid black; 
+    border-radius: 5px; 
+    display: block; 
+    font-size: 14px; 
+    margin: 10px auto; 
+}
+
+.newPatronForm {
+    width: 100%; 
+    margin: auto; 
+    padding-bottom: 50px; 
+}
+
+.newPatronToggleArea {
+    margin-bottom: 50px; 
+}
+
+.radio-button-container {
+    margin: 20px auto; 
+}
+

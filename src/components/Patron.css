@@ -1,0 +1,26 @@
+.patron {
+    border: 1px solid grey; 
+    color: white; 
+    margin-bottom: 10px; 
+    margin-top: 10px; 
+}
+
+.level1 {
+    background-color: #5b9b6c;  
+}
+
+.level2 {
+    background-color: #8b9b5b; 
+}
+
+.level3 {
+    background-color: #9b975b; 
+}
+
+.level4 {
+    background-color: #9b745b; 
+}
+
+.level5 {
+    background-color: #9b5b5b; 
+}

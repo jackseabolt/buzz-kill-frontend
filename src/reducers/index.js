@@ -1,37 +1,30 @@
-import {ADD_USER, addUser} from '../actions'; 
+import {ADD_PATRON, addPatron, RENDER_PATRONS, renderPatrons} from '../actions'; 
 const initialState = {
-    customers: [
-        {
-            timeIn: Date.now(), 
-            table: 1, 
-            seat: 3, 
-            bac: 1.4
-        }, 
-        {
-            timeIn: Date.now(), 
-            table: 2, 
-            seat: 1, 
-            bac: 2.4
-        }
-    ]
+    patrons: []
 }
 
 export const customerReducer = (state=initialState, action) => {
-    if(action.type === ADD_USER) {
+    if(action.type === ADD_PATRON) {
         return Object.assign({}, state, 
-            { customers: 
-                [ ...state.customers, {
-                        name: action.name,
+            { patrons: 
+                [ ...state.patrons, {
                         table: action.table, 
                         seat: action.seat,
-                        wgt: 150, 
+                        weight: 150, 
                         gender: action.gender, 
-                        timeIn: Date.now(),
+                        start: Date.now(),
                         bac: 0.0,
                         drinks: [] 
                     }
                 ]
             })
+    }
+    else if (action.type === RENDER_PATRONS) {
+        return Object.assign({}, state, { patrons: 
+            [
+                ...state.patrons, ...action.patrons
+            ]
+        })
     }
     return state; 
 } 

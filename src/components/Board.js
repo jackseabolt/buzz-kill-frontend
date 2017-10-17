@@ -1,29 +1,37 @@
 import React from 'react'; 
-import Customer from './Customer'; 
+import Patron from './Patron'; 
 import { connect } from 'react-redux'; 
+import { getPatrons } from '../actions'; 
 
 export class Board extends React.Component {
+    
+    componentDidMount() {
+        this.props.dispatch(getPatrons()); 
+    }
+    
     render() {
-        const customerList = this.props.customers.map((customer, idx) => (
-            <Customer 
-                timeIn={customer.timeIn}
-                table={customer.table}
-                seat={customer.seat}
-                bac={customer.bac}
+        const patronList = this.props.patrons.map((patron, idx) => (
+            <Patron
+                start={patron.start}
+                table={patron.table}
+                seat={patron.seat}
+                bac={patron.bac}
                 key={idx} />
         )); 
 
         return (
             <div className="board">
-                {customerList}
+                {patronList}
             </div>
         )
     }
 }
 
 export const mapStateToProps = state => ({
-    customers: state.customers
-})
+    patrons: state.patrons
+}); 
+
+
 
 export default connect(mapStateToProps)(Board); 
 
