@@ -34,7 +34,7 @@ export default class Patron extends React.Component {
         }
 
         const drinkDisplay = this.props.drinks.map(drink => (
-            <i class="fa fa-beer" aria-hidden="true"></i>
+            <i className="fa fa-beer" aria-hidden="true"></i>
         ))
 
 
