@@ -51,3 +51,25 @@ export const getPatrons = () => dispatch => {
         })
         .then(data => dispatch(renderPatrons(data)));
 }
+
+export const ADD_DRINK = 'ADD_DRINK'; 
+export const addDrink = (quantity, patronId) => dispatch => {
+    
+    return fetch(`http://localhost:8080/api/drinks/${patronId}`, {
+        method: 'PUT', 
+        body: JSON.stringify({
+            _id: patronId, 
+            drinks: {drinkEq: quantity}
+        }), 
+        headers: {
+           'Content-Type': 'application/json' 
+        }
+    })
+    .then(res => {
+        if(!res.ok){
+            return Promise.reject(res.statusText)
+        }
+        console.log("addDrink got the end")
+        return res.json()
+    })
+}; 
