@@ -10,14 +10,14 @@ export class Board extends React.Component {
     }
     
     render() {
-        const patronList = this.props.patrons.map((patron, idx) => (
+        const patronList = this.props.patrons.map(patron => (
             <Patron
+                key={patron.id} 
                 timeOnSite={patron.timeOnSite}
                 table={patron.table}
                 seat={patron.seat}
                 bac={patron.bac}
                 id={patron.id}
-                key={idx} 
                 drinks={patron.drinks} />
         )); 
 

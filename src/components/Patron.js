@@ -51,7 +51,6 @@ export default class Patron extends React.Component {
                 <h4>TIME ON SITE: {this.props.timeOnSite}</h4>
                 <p>TABLE: {this.props.table}</p>
                 <p>SEAT: {this.props.seat}</p>
-                {/* <p>DRINKS: {this.props.drinks}</p> */}
                 {drinkDisplay}
                 <i className="fa fa-plus-circle" onClick={() => this.handleFormToggle()} aria-hidden="true"></i>
             </div>

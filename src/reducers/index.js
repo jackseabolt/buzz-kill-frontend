@@ -22,7 +22,7 @@ export const customerReducer = (state=initialState, action) => {
     else if (action.type === RENDER_PATRONS) {
         return Object.assign({}, state, { patrons: 
             [
-                ...state.patrons, ...action.patrons
+                ...action.patrons
             ]
         })
     }
