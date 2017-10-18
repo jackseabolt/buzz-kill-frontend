@@ -48,3 +48,7 @@ body {
   cursor: pointer; 
   margin-left: 5px; 
 }
+
+.button_red:hover {
+  background-color: #772C2C; 
+}
