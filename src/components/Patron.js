@@ -18,6 +18,8 @@ export class Patron extends React.Component {
         const quantity = 1;
         const id = this.props.id;
         this.props.dispatch(addDrink(quantity, id))
+        const audio = this.audioPlayer; 
+        audio.play();
     }
 
     handleFormToggle(){
@@ -68,6 +70,9 @@ export class Patron extends React.Component {
                 {drinkDisplay}
                 {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
                 <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                <audio ref={audio => this.audioPlayer = audio} >
+                    <source src="./sounds/pour.m4a" type="audio/mp4" />
+                </audio>
             </div>
         )
     }
