@@ -14,7 +14,6 @@ export class Board extends React.Component {
         
         const patronList = initialData.map(patron => {
 
-            console.log(new Date(patron.start).getTime()); 
             return  <Patron
                 key={patron.id} 
                 timeOnSite={patron.timeOnSite}
