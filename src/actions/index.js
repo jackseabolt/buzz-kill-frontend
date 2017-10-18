@@ -51,7 +51,7 @@ export const getPatrons = () => dispatch => {
         })
         .then(data => {
             dispatch(renderPatrons(data))
-            setTimeout(dispatch(getPatrons()), 60000); 
+            setTimeout(function(){dispatch(getPatrons())}, 60000); 
         }
     );
 }
