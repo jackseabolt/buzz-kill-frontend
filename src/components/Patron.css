@@ -1,12 +1,14 @@
 .close {
     float: right; 
     color: black; 
-    opacity: 0.3; 
+    opacity: 0.3;
+    transition: 0.3s; 
+    cursor: pointer; 
 }
 
 .close:hover {
     color: #fff; 
-    opacity: 0.6; 
+    opacity: 0.5; 
 }
 
 .fa {
@@ -24,6 +26,7 @@
     margin-top: 20px; 
     margin-left: 20px; 
     margin-right: 20px; 
+    cursor: pointer; 
 }
 
 .fa-plus:hover {

@@ -14,7 +14,7 @@ body {
   border-radius: 5px; 
   margin: auto; 
   transition: 0.3s;  
-  cursor: hand; 
+  cursor: pointer; 
 }
 .button:hover {
   background: #252630; 
