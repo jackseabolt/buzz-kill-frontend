@@ -10,8 +10,12 @@ export class Board extends React.Component {
     }
     
     render() {
-        const patronList = this.props.patrons.map(patron => (
-            <Patron
+        const initialData= this.props.patrons.sort((patron_1, patron_2) => (new Date(patron_2.start).getTime() - new Date(patron_1.start).getTime()))
+        
+        const patronList = initialData.map(patron => {
+
+            console.log(new Date(patron.start).getTime()); 
+            return  <Patron
                 key={patron.id} 
                 timeOnSite={patron.timeOnSite}
                 table={patron.table}
@@ -19,7 +23,8 @@ export class Board extends React.Component {
                 bac={patron.bac}
                 id={patron.id}
                 drinks={patron.drinks} />
-        )); 
+        }); 
+
 
         return (
             <div className="board">
