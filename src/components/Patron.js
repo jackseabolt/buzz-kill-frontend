@@ -57,13 +57,17 @@ export class Patron extends React.Component {
         }
         return (
             <div className={color}>
-                <h1>{this.props.bac}%</h1>
-                <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
-                <p>TABLE: {this.props.table}</p>
-                <p>SEAT: {this.props.seat}</p>
-                {drinkDisplay}
-                {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
-                <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                <div className="left">
+                    <h1>{this.props.bac}%</h1>
+                </div>
+                <div className="left">
+                    <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
+                    <p>TABLE: {this.props.table}</p>
+                    <p>SEAT: {this.props.seat}</p>
+                    {drinkDisplay}
+                    {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
+                    <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                </div>
             </div>
         )
     }
