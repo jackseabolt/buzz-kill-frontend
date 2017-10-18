@@ -91,6 +91,11 @@ p {
     background-color: #9b5b5b; 
 }
 
+.level5 h1 {
+    margin-top: 15px;
+    margin-bottom: 10px; 
+}
+
 @media screen and (min-width: 1000px) {
     .patron {
         width: 50%;

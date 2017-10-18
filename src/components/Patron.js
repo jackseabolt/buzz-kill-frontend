@@ -60,10 +60,20 @@ export class Patron extends React.Component {
                 </div>
             )
         }
+
+        let callTaxi; 
+        if(this.props.bac > 12.1) {
+            callTaxi = (
+                <a href="tel:+15105934577">
+                    <button className='button_red'>Call Taxi <i class="fa fa-taxi" aria-hidden="true"></i></button>
+                </a>
+            )
+        }
         return (
             <div className={color}>
                 <div className="left">
                     <h1>{this.props.bac}%</h1>
+                    { callTaxi }
                 </div>
                 <div className="right">
                     <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
