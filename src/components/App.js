@@ -7,7 +7,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="title">Buzz Kill</h1>
+        <img className="logo" src={require('../logo.jpg')} alt="logo" />
+        {/* <h1 className="title">Buzz Kill</h1> */}
         <NewPatronForm />
         <Board />
       </div>

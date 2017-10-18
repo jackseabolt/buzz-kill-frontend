@@ -9,3 +9,21 @@
   font-size: 60px; 
   color: #2d2d2d; 
 }
+
+.logo {
+  width: 350px;
+  margin-top: 80px; 
+  margin-bottom: 20px; 
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 50px;
+  }
+
+  .logo {
+    width: 250px;
+    margin-top: 50px; 
+    margin-bottom: 20px; 
+  }
+}

@@ -20,7 +20,6 @@ export class UpdatePatronForm extends React.Component {
         return (
             <div className="updatePatronForm">
                 <form onSubmit={event => this.handleFormSubmit(event)}> 
-                    <p>The id is {this.props.patronId}</p>
                     <select ref={input => this.input = input}>
                         <option value="1">1</option>
                         <option value="1.5">1.5</option>

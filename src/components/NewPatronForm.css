@@ -23,3 +23,16 @@
     margin: 20px auto; 
 }
 
+.radio {
+    margin-left: 10px; 
+    margin-right: 5px;
+    position: relative; 
+    top: -2px;  
+}
+
+
+@media screen and (max-width: 600px) {
+    .input {
+        width: 50%; 
+    }
+}

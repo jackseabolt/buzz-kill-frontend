@@ -1,15 +1,28 @@
-.fa{
+.fa {
     font-size: 25px;
     margin-left: 10px;
+    margin-top: 20px; 
+}
+
+.fa-plus {
+    color: #fff; 
+    transition: 0.3s; 
+    margin-left: 20px; 
+    margin-right: 20px; 
+}
+
+.fa-plus:hover {
+    color: #c6c6c6;
 }
 
 .patron {
     border: 1px solid grey; 
     color: white; 
-    margin-bottom: 10px; 
-    margin-top: 10px; 
-    padding-top: 20px; 
-    padding-bottom: 30px; 
+    margin: 10px auto; 
+    padding-top: 30px; 
+    padding-bottom: 40px;
+    padding-left: 15px; 
+    padding-right: 20px; 
 }
 
 .level1 {
@@ -30,4 +43,11 @@
 
 .level5 {
     background-color: #9b5b5b; 
+}
+
+@media screen and (min-width: 1000px) {
+    .patron {
+        width: 80%;
+        border-radius: 5px;     
+    }
 }

@@ -34,8 +34,8 @@ export class NewCustomerForm extends React.Component {
                         <input className="input" placeholder="Table" ref={input => this.tableInput = input} />
                         <input className="input" placeholder="Seat" ref={input => this.seatInput = input} />
                         <div className="radio-button-container">
-                            <input type="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
-                            <input type="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
+                            <input type="radio" className="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
+                            <input type="radio" className="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
                         </div>
                         <button className="button" type="submit">Add Patron</button>
                     </form>
