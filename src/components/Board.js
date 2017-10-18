@@ -25,7 +25,6 @@ export class Board extends React.Component {
                 drinks={patron.drinks} />
         }); 
 
-
         return (
             <div className="board">
                 {patronList}
