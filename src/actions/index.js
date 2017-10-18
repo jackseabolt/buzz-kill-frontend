@@ -1,4 +1,4 @@
-import thunk from 'redux-thunk';
+
 export const PATRON_ADDED = 'PATRON_ADDED'
 export const patronAdded = (table, seat, gender, start) => ({
     type: ADD_PATRON,
@@ -30,9 +30,23 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
     })
     .then(patron => {
         console.log(patron);
-        dispatch(getPatrons()); 
+        return dispatch(getPatrons()); 
+    })
+    .catch(err => {
+        return dispatch(handleError(err))
     })
 }; 
+
+export const HANDLE_ERROR = 'HANDLE_ERROR'; 
+export const handleError = err => ({
+    type: HANDLE_ERROR, 
+    err
+})
+
+export const CLEAR_ERROR = 'CLEAR_ERROR'; 
+export const clearError = () => ({
+    type: CLEAR_ERROR
+})
 
 export const RENDER_PATRONS = 'RENDER_PATRONS'; 
 export const renderPatrons = patrons => ({
@@ -114,9 +128,3 @@ export const deleteAll = () => dispatch => {
 
 
 
-export const UPDATE_PATRON = 'UPDATE_PATRON'; 
-export const updatePatron = (patron) => ({
-    type: UPDATE_PATRON, 
-    bac: patron.bac, 
-    id: patron.id
-})

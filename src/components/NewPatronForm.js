@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPatron, deleteAll } from '../actions';
+import { addPatron, deleteAll, clearError } from '../actions';
 import { connect } from 'react-redux'; 
 import './NewPatronForm.css'; 
 
@@ -16,10 +16,16 @@ export class NewCustomerForm extends React.Component {
         event.preventDefault(); 
         console.log("handleFormSubmit ran");
         const {gender} = this.form;
-        this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value)); 
-        this.tableInput.value = '';
-        this.seatInput.value = ''; 
-        this.handleFormToggle();
+        this.props.dispatch(clearError())
+            this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
+            .then(res => {
+                    if(this.props.error == undefined) {
+                        this.tableInput.value = '';
+                        this.seatInput.value = ''; 
+                        this.handleFormToggle();
+                    }
+                }
+            )
     }
 
     handleFormToggle() {
@@ -32,9 +38,17 @@ export class NewCustomerForm extends React.Component {
     }
     
     render() {
+
+        let formError;
+    
+        if(this.props.error === 'Unprocessable Entity') {
+            formError = (<p className="error">Please enter a valid seat number, <br />table number and gender.</p>)
+        }
+        
         if(this.state.formDisplayed){
             return (
                 <div className="newPatronForm">
+                    {formError}
                     <form onSubmit={e => this.handleFormSubmit(e)} ref={form => this.form = form} > 
                         <input className="input" placeholder="Table" ref={input => this.tableInput = input} />
                         <input className="input" placeholder="Seat" ref={input => this.seatInput = input} />
@@ -58,7 +72,7 @@ export class NewCustomerForm extends React.Component {
 }
 
 export const mapStateToProps = state => ({
-
+    error: state.error
 }); 
 
 export default connect(mapStateToProps)(NewCustomerForm); 

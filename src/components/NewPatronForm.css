@@ -1,4 +1,9 @@
 
+.error { 
+    color: #a04343; 
+    margin: 20px; 
+}
+
 .input {
     width: 30%; 
     padding: 6px 9px; 

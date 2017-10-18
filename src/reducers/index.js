@@ -1,4 +1,5 @@
-import {ADD_PATRON, addPatron, RENDER_PATRONS, renderPatrons, UPDATE_PATRON, updatePatron} from '../actions'; 
+import { ADD_PATRON, RENDER_PATRONS, HANDLE_ERROR, CLEAR_ERROR } from '../actions'; 
+
 const initialState = {
     patrons: []
 }
@@ -26,27 +27,11 @@ export const customerReducer = (state=initialState, action) => {
             ]
         })
     }
-    else if (action.type === UPDATE_PATRON) {
-        console.log(action.bac)
-        const formatted = {};
-        state.patrons.forEach((obj, idx) => {
-            return formatted[idx] = obj;
-        })
-        console.log(formatted)
-        // for(let i = 0; i < formatted.length; i++) {
-        //     if()
-        // }
-
-        return Object.assign({}, state, 
-            {
-                patrons: [
-                    ...state.patrons.filter(patron => patron.id !== action.id), 
-                    Object.assign({}, ...state.patrons.filter(patron => patron.id === action.id, { 
-                        bac: action.bac
-                    }))
-                ]
-            }
-        )
+    else if (action.type === HANDLE_ERROR) {
+        return Object.assign({}, state, { error: action.err }); 
+    }
+    else if (action.type === CLEAR_ERROR) {
+        return Object.assign({}, state, { error: undefined })
     }
     return state; 
 } 
