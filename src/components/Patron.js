@@ -17,13 +17,14 @@ export class Patron extends React.Component {
         const quantity = 1;
         const id = this.props.id;
         console.log(`Here is the id: ${id}`)
+        this.playSound(); 
         this.props.dispatch(addDrink(quantity, id))
     }
 
     handleFormToggle(){
         this.setState({formDisplayed: !this.state.formDisplayed})
     }
-    
+
     render(){
         let patronBac = this.props.bac; 
         let color; 
