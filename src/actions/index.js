@@ -23,7 +23,7 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
         }
     })
     .then( res => {
-        if(!res.ok){
+        if(!res.ok) {
             return Promise.reject(res.statusText)
         }
         return res.json(); 
@@ -31,7 +31,6 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
     .then(patron => {
         console.log(patron);
         dispatch(getPatrons()); 
-        // dispatch(patronAdded(patron.table, patron.seat, patron.gender, patron.start))
     })
 }; 
 
@@ -45,7 +44,7 @@ export const GET_PATRONS = 'GET_PATRONS';
 export const getPatrons = () => dispatch => {
     return fetch('http://localhost:8080/api/patrons/')
         .then(res => {
-            if(!res.ok){
+            if(!res.ok) {
                 return Promise.reject(res.statusText)
             }
             return res.json(); 
@@ -70,7 +69,7 @@ export const addDrink = (quantity, patronId) => dispatch => {
         }
     })
     .then(res => {
-        if(!res.ok){
+        if(!res.ok) {
             return Promise.reject(res.statusText)
         }
         console.log(res.body)
@@ -79,8 +78,27 @@ export const addDrink = (quantity, patronId) => dispatch => {
     .then(patron => {
         console.log(patron)
         dispatch(getPatrons()); 
-    })
+    });
 }; 
+
+export const DELETE_PATRON = 'DELETE_PATRON'; 
+export const deletePatron = (patronId) => dispatch => {
+    return fetch(`http://localhost:8080/api//patrons/${patronId}`, {
+        method: 'DELETE'
+    })
+    .then(res => {
+        if(!res.ok) {
+            return Promise.reject(res.statusText)
+        }
+        return;
+    })
+    .then(() => {
+        dispatch(getPatrons());
+    }); 
+}
+
+
+
 
 export const UPDATE_PATRON = 'UPDATE_PATRON'; 
 export const updatePatron = (patron) => ({

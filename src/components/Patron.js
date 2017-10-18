@@ -2,6 +2,7 @@ import React from 'react';
 import UpdatePatronForm from './UpdatePatronForm';
 import { connect } from 'react-redux'; 
 import { addDrink } from '../actions'; 
+import { deletePatron } from '../actions'; 
 import './Patron.css'; 
 
 export class Patron extends React.Component {
@@ -22,6 +23,10 @@ export class Patron extends React.Component {
 
     handleFormToggle(){
         this.setState({formDisplayed: !this.state.formDisplayed})
+    }
+
+    handleDeletePatron() {
+        this.props.dispatch(deletePatron(this.props.id))
     }
 
     render(){
@@ -56,17 +61,14 @@ export class Patron extends React.Component {
         }
         return (
             <div className={color}>
-                <div className="left">
-                    <h1>{this.props.bac}%</h1>
-                </div>
-                <div className="left">
-                    <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
-                    <p>TABLE: {this.props.table}</p>
-                    <p>SEAT: {this.props.seat}</p>
-                    {drinkDisplay}
-                    {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
-                    <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
-                </div>
+                <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
+                <h1>{this.props.bac}%</h1>
+                <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
+                <p>TABLE: {this.props.table}</p>
+                <p>SEAT: {this.props.seat}</p>
+                {drinkDisplay}
+                {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
+                <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
             </div>
         )
     }
