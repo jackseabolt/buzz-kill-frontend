@@ -23,6 +23,8 @@ export class NewCustomerForm extends React.Component {
                         this.tableInput.value = '';
                         this.seatInput.value = ''; 
                         this.handleFormToggle();
+                        const audio = this.audioPlayer; 
+                        audio.play();
                     }
                 }
             )
@@ -66,6 +68,9 @@ export class NewCustomerForm extends React.Component {
             <div className="newPatronToggleArea">
                 <button className="button_blue" onClick={() => this.handleFormToggle()}>Add New Patron</button>
                 <button className="button_red" onClick={() => this.handleDeleteAll()}>Clear</button>
+                <audio ref={audio => this.audioPlayer = audio} >
+                    <source src="./sounds/open.m4a" type="audio/mp4" />
+                </audio>
             </div>
         )
     }

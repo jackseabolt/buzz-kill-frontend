@@ -27,6 +27,8 @@ export class Patron extends React.Component {
     }
 
     handleDeletePatron() {
+        const audio = this.audioPlayer2; 
+        audio.play();
         this.props.dispatch(deletePatron(this.props.id))
     }
 
@@ -88,6 +90,9 @@ export class Patron extends React.Component {
                 <div className="clear"></div>
                 <audio ref={audio => this.audioPlayer = audio} >
                     <source src="./sounds/pour.m4a" type="audio/mp4" />
+                </audio>
+                <audio ref={audio => this.audioPlayer2 = audio} >
+                    <source src="./sounds/crush.m4a" type="audio/mp4" />
                 </audio>
             </div>
         )
