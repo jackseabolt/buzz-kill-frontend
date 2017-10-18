@@ -17,7 +17,6 @@ export class Patron extends React.Component {
         event.preventDefault(); 
         const quantity = 1;
         const id = this.props.id;
-        console.log(`Here is the id: ${id}`)
         this.props.dispatch(addDrink(quantity, id))
     }
 

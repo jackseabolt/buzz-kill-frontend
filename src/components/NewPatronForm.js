@@ -1,5 +1,5 @@
 import React from 'react';
-import { addPatron } from '../actions';
+import { addPatron, deleteAll } from '../actions';
 import { connect } from 'react-redux'; 
 import './NewPatronForm.css'; 
 
@@ -22,8 +22,13 @@ export class NewCustomerForm extends React.Component {
         this.handleFormToggle();
     }
 
-    handleFormToggle(){
+    handleFormToggle() {
         this.setState({formDisplayed: !this.state.formDisplayed})
+    }
+
+    handleDeleteAll() {
+        console.log("This ran")
+        this.props.dispatch(deleteAll())
     }
     
     render() {
@@ -37,14 +42,16 @@ export class NewCustomerForm extends React.Component {
                             <input type="radio" className="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
                             <input type="radio" className="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
                         </div>
-                        <button className="button" type="submit">Add Patron</button>
+                        <button className="button_blue" type="submit">Add Patron</button>
+                        <button className="button_red" onClick={() => this.handleFormToggle()}>Close</button>
                     </form>
                 </div>
             )
         }
         return (
             <div className="newPatronToggleArea">
-                <button className="button" onClick={() => this.handleFormToggle()}>Add New Patron</button>
+                <button className="button_blue" onClick={() => this.handleFormToggle()}>Add New Patron</button>
+                <button className="button_red" onClick={() => this.handleDeleteAll()}>Clear</button>
             </div>
         )
     }

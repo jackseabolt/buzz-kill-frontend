@@ -19,3 +19,32 @@ body {
 .button:hover {
   background: #252630; 
 }
+
+.button_blue {
+  display: inline-block; 
+  color: white; 
+  padding: 10px 15px; 
+  border: 0px;
+  font-size: 14px;  
+  background-color: #373844; 
+  border-radius: 5px; 
+  margin: auto; 
+  transition: 0.3s;  
+  cursor: pointer; 
+}
+.button_blue:hover {
+  background: #252630; 
+}
+.button_red {
+  display: inline-block; 
+  color: white; 
+  padding: 10px 15px; 
+  border: 0px;
+  font-size: 14px;  
+  background-color: #a04343; 
+  border-radius: 5px; 
+  margin: auto; 
+  transition: 0.3s;  
+  cursor: pointer; 
+  margin-left: 5px; 
+}

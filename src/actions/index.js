@@ -83,7 +83,7 @@ export const addDrink = (quantity, patronId) => dispatch => {
 
 export const DELETE_PATRON = 'DELETE_PATRON'; 
 export const deletePatron = (patronId) => dispatch => {
-    return fetch(`http://localhost:8080/api//patrons/${patronId}`, {
+    return fetch(`http://localhost:8080/api/patrons/${patronId}`, {
         method: 'DELETE'
     })
     .then(res => {
@@ -95,6 +95,20 @@ export const deletePatron = (patronId) => dispatch => {
     .then(() => {
         dispatch(getPatrons());
     }); 
+}
+
+export const DELETE_ALL = 'DELETE_ALL'; 
+export const deleteAll = () => dispatch => {
+    return fetch(`http://localhost:8080/api/patrons/dayclose/`, {
+        method: 'DELETE'
+    })
+    .then(res => {
+        if(!res.ok) {
+            return Promise.reject(res.statusText)
+        }
+        return; 
+    })
+    .then(() => dispatch(getPatrons()))
 }
 
 
