@@ -17,11 +17,10 @@ export class Board extends React.Component {
             return  <Patron
                 key={patron.id} 
                 timeOnSite={patron.timeOnSite}
-                table={patron.table}
-                seat={patron.seat}
                 bac={patron.bac}
                 id={patron.id}
-                drinks={patron.drinks} />
+                drinks={patron.drinks} 
+                seatString={patron.seatString} />    
         }); 
 
         return (

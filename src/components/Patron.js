@@ -62,14 +62,20 @@ export class Patron extends React.Component {
         }
         return (
             <div className={color}>
-                <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
-                <h1>{this.props.bac}%</h1>
-                <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
-                <p>TABLE: {this.props.table}</p>
-                <p>SEAT: {this.props.seat}</p>
-                {drinkDisplay}
-                {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
-                <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                <div className="left">
+                    <h1>{this.props.bac}%</h1>
+                </div>
+                <div className="right">
+                    <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
+                    <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
+                    <p>{this.props.seatString}</p>
+                    {/* <p>TABLE: {this.props.table}</p> */}
+                    {/* <p>SEAT: {this.props.seat}</p> */}
+                    {drinkDisplay}
+                    {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
+                    <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                </div>
+                <div className="clear"></div>
                 <audio ref={audio => this.audioPlayer = audio} >
                     <source src="./sounds/pour.m4a" type="audio/mp4" />
                 </audio>
