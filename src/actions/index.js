@@ -50,7 +50,11 @@ export const getPatrons = () => dispatch => {
             }
             return res.json(); 
         })
-        .then(data => dispatch(renderPatrons(data)));
+        .then(data => {
+            dispatch(renderPatrons(data))
+            setTimeout(dispatch(getPatrons()), 60000); 
+        }
+    );
 }
 
 export const ADD_DRINK = 'ADD_DRINK'; 
