@@ -19,7 +19,7 @@ export class NewCustomerForm extends React.Component {
         this.props.dispatch(clearError())
             this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
             .then(res => {
-                    if(this.props.error == undefined) {
+                    if(this.props.error === undefined) {
                         this.tableInput.value = '';
                         this.seatInput.value = ''; 
                         this.handleFormToggle();

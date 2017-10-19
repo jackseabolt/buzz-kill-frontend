@@ -1,4 +1,4 @@
-import { ADD_PATRON, RENDER_PATRONS, HANDLE_ERROR, CLEAR_ERROR } from '../actions'; 
+import { RENDER_PATRONS, HANDLE_ERROR, CLEAR_ERROR } from '../actions'; 
 
 const initialState = {
     patrons: []
