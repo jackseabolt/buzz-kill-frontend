@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './NewPatronForm.css'; 
 
 
-export class NewCustomerForm extends React.Component {
+export class NewPatronForm extends React.Component {
     constructor(props){
         super(props); 
         this.state = {
@@ -80,4 +80,4 @@ export const mapStateToProps = state => ({
     error: state.error
 }); 
 
-export default connect(mapStateToProps)(NewCustomerForm); 
+export default connect(mapStateToProps)(NewPatronForm); 

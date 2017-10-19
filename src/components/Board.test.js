@@ -2,8 +2,6 @@ import React from 'react';
 import { Board } from './Board'; 
 import Patron from './Patron'; 
 import { shallow, mount } from 'enzyme'; 
-import { Provider } from 'react-redux'; 
-import store from '../store'; 
 import { getPatrons } from '../actions'; 
 
 describe('<Board />', () => {
