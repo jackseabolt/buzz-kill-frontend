@@ -1,15 +1,5 @@
 import { REACT_APP_API_URL } from '../config';
  
-
-export const PATRON_ADDED = 'PATRON_ADDED'
-export const patronAdded = (table, seat, gender, start) => ({
-    type: ADD_PATRON,
-    table, 
-    seat,
-    gender, 
-    start
-}); 
-
 export const ADD_PATRON = 'ADD_PATRON';
 export const addPatron = (table, seat, gender, start) => dispatch => {
     return fetch(`${REACT_APP_API_URL}/api/patrons/`, {
@@ -31,6 +21,7 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
         return res.json(); 
     })
     .then(patron => {
+        console.log(patron);
         return dispatch(getPatrons()); 
     })
     .catch(err => {
@@ -125,6 +116,8 @@ export const deleteAll = () => dispatch => {
     })
     .then(() => dispatch(getPatrons()))
 }
+
+
 
 
 
