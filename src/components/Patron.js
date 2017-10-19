@@ -74,7 +74,7 @@ export class Patron extends React.Component {
         return (
             <div className={color}>
                 <div className="left">
-                    <h1>{this.props.bac}%</h1>
+                    <h1>{this.props.bac}</h1>
                     { callTaxi }
                 </div>
                 <div className="right">
