@@ -29,7 +29,6 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
         return res.json(); 
     })
     .then(patron => {
-        console.log(patron);
         return dispatch(getPatrons()); 
     })
     .catch(err => {
