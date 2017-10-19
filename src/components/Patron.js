@@ -1,17 +1,10 @@
 import React from 'react'; 
-import UpdatePatronForm from './UpdatePatronForm';
 import { connect } from 'react-redux'; 
 import { addDrink } from '../actions'; 
 import { deletePatron } from '../actions'; 
 import './Patron.css'; 
 
 export class Patron extends React.Component {
-    constructor(props){
-        super(props); 
-        this.state = {
-           formDisplayed: false
-        }
-    }
 
     handleFormSubmit(event) {
         event.preventDefault(); 
@@ -55,19 +48,11 @@ export class Patron extends React.Component {
             <i className="fa fa-beer" key={idx} aria-hidden="true"></i>
         ))
 
-        if(this.state.formDisplayed){
-            return (
-                <div className={color}>
-                    <UpdatePatronForm patronId={this.props.id} handleFormToggle={() => this.handleFormToggle()}/>
-                </div>
-            )
-        }
-
         let callTaxi; 
         if(this.props.bac > 12.1) {
             callTaxi = (
                 <a href="tel:+15105934577">
-                    <button className='button_red'>Call Taxi <i class="fa fa-taxi" aria-hidden="true"></i></button>
+                    <button className='button_red'>Call Taxi <i className="fa fa-taxi" aria-hidden="true"></i></button>
                 </a>
             )
         }

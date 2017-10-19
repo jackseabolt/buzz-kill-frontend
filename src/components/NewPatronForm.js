@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './NewPatronForm.css'; 
 
 
-export class NewCustomerForm extends React.Component {
+export class NewPatronForm extends React.Component {
     constructor(props){
         super(props); 
         this.state = {
@@ -19,7 +19,7 @@ export class NewCustomerForm extends React.Component {
         this.props.dispatch(clearError())
             this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
             .then(res => {
-                    if(this.props.error == undefined) {
+                    if(this.props.error === undefined) {
                         this.tableInput.value = '';
                         this.seatInput.value = ''; 
                         this.handleFormToggle();
@@ -80,4 +80,4 @@ export const mapStateToProps = state => ({
     error: state.error
 }); 
 
-export default connect(mapStateToProps)(NewCustomerForm); 
+export default connect(mapStateToProps)(NewPatronForm); 
