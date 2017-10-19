@@ -4,7 +4,7 @@ import Patron from './Patron';
 import { shallow, mount } from 'enzyme'; 
 import { Provider } from 'react-redux'; 
 import store from '../store'; 
-import { getPatron } from '../actions'; 
+import { getPatrons } from '../actions'; 
 
 describe('<Board />', () => {
     it('renders without crashing', () => {
@@ -22,6 +22,7 @@ describe('<Board />', () => {
     it('dispatches getPatrons when the component renders', () => {
         const spy = jest.fn(); 
         const wrapper = mount(<Board patrons={[]} dispatch={spy} />);
-        expect(spy).toHaveBeenCalledWith(getPatron())
+        expect(spy).toHaveBeenCalled(); 
+        expect(typeof spy.mock.calls[0][0]).toEqual('function');  
     }); 
 }); 
