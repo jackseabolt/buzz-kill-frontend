@@ -10,7 +10,7 @@ export const patronAdded = (table, seat, gender, start) => ({
 
 export const ADD_PATRON = 'ADD_PATRON';
 export const addPatron = (table, seat, gender, start) => dispatch => {
-    return fetch('http://localhost:8080/api/patrons/', {
+    return fetch('https://buzz-kill-back.herokuapp.com/api/patrons/', {
         method: 'POST', 
         body: JSON.stringify({
             table, 
@@ -56,7 +56,7 @@ export const renderPatrons = patrons => ({
 
 export const GET_PATRONS = 'GET_PATRONS'; 
 export const getPatrons = () => dispatch => {
-    return fetch('http://localhost:8080/api/patrons/')
+    return fetch('https://buzz-kill-back.herokuapp.com/api/patrons/')
         .then(res => {
             if(!res.ok) {
                 return Promise.reject(res.statusText)
@@ -72,7 +72,7 @@ export const getPatrons = () => dispatch => {
 
 export const ADD_DRINK = 'ADD_DRINK'; 
 export const addDrink = (quantity, patronId) => dispatch => { 
-    return fetch(`http://localhost:8080/api/drinks/${patronId}`, {
+    return fetch(`https://buzz-kill-back.herokuapp.com/api/drinks/${patronId}`, {
         method: 'PUT', 
         body: JSON.stringify({
             _id: patronId, 
@@ -97,7 +97,7 @@ export const addDrink = (quantity, patronId) => dispatch => {
 
 export const DELETE_PATRON = 'DELETE_PATRON'; 
 export const deletePatron = (patronId) => dispatch => {
-    return fetch(`http://localhost:8080/api/patrons/${patronId}`, {
+    return fetch(`https://buzz-kill-back.herokuapp.com/api/patrons/${patronId}`, {
         method: 'DELETE'
     })
     .then(res => {
@@ -113,7 +113,7 @@ export const deletePatron = (patronId) => dispatch => {
 
 export const DELETE_ALL = 'DELETE_ALL'; 
 export const deleteAll = () => dispatch => {
-    return fetch(`http://localhost:8080/api/patrons/dayclose/`, {
+    return fetch(`https://buzz-kill-back.herokuapp.com/api/patrons/dayclose/`, {
         method: 'DELETE'
     })
     .then(res => {
