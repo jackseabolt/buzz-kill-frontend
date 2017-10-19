@@ -1,7 +1,4 @@
-
-
 import { REACT_APP_API_URL } from '../config';
-require('dotenv').config();
  
 
 export const PATRON_ADDED = 'PATRON_ADDED'
