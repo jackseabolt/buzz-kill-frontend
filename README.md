@@ -44,5 +44,19 @@ How it Works
   </tr>
 </table>
 
-FRONT-END
+For local use
 --------
+
+```bash
+# Clone repository
+git clone https://github.com/jackseabolt/buzz-kill-frontend.git
+
+# Change directory
+cd buzz-kill-frontend
+
+# Install NPM dependencies
+npm install
+
+# Start the server
+npm start
+```
