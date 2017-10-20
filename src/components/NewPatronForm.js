@@ -3,7 +3,6 @@ import { addPatron, deleteAll, clearError } from '../actions';
 import { connect } from 'react-redux'; 
 import './NewPatronForm.css'; 
 
-
 export class NewPatronForm extends React.Component {
     constructor(props){
         super(props); 
@@ -16,7 +15,7 @@ export class NewPatronForm extends React.Component {
         event.preventDefault(); 
         const {gender} = this.form;
         this.props.dispatch(clearError())
-            this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
+        this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
             .then(res => {
                     if(this.props.error === undefined) {
                         this.tableInput.value = '';
@@ -49,7 +48,7 @@ export class NewPatronForm extends React.Component {
             return (
                 <div className="newPatronForm">
                     {formError}
-                    <form onSubmit={e => this.handleFormSubmit(e)} ref={form => this.form = form} > 
+                    <form onSubmit={e => this.handleFormSubmit(e)} ref={form => this.form = form} className="form" > 
                         <input className="input" placeholder="Table" ref={input => this.tableInput = input} />
                         <input className="input" placeholder="Seat" ref={input => this.seatInput = input} />
                         <div className="radio-button-container">

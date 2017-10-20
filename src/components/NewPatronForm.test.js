@@ -31,15 +31,17 @@ describe('<NewPatronForm />', () => {
     }); 
     it('dispatches clearError action on every form submit', () => {
         const spy = jest.fn(); 
-        const wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance(); 
+        let wrapper = mount(<NewPatronForm dispatch={spy} />); 
+        wrapper.instance();
+        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(false); 
+        expect(wrapper.state('formDisplayed')).toEqual(false);
         const button = wrapper.find('.button_blue'); 
         button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true)
+        expect(wrapper.state('formDisplayed')).toEqual(true); 
         expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        // const submitBtn = wrapper.find('.testing-submit'); 
-        // submitBtn.simulate('click');
-        // expect(spy).toHaveBeenCalled();
+        const form = wrapper.find('.form'); 
+        form.simulate('submit');
+        expect(spy).toHaveBeenCalled();
     }); 
     it('dispatches addPatron on submit', () => {
         const spy = jest.fn(); 
