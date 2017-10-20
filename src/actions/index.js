@@ -21,7 +21,6 @@ export const addPatron = (table, seat, gender, start) => dispatch => {
         return res.json(); 
     })
     .then(patron => {
-        console.log(patron);
         return dispatch(getPatrons()); 
     })
     .catch(err => {
@@ -78,11 +77,9 @@ export const addDrink = (quantity, patronId) => dispatch => {
         if(!res.ok) {
             return Promise.reject(res.statusText)
         }
-        console.log(res.body)
         return res.json(); 
     })
     .then(patron => {
-        console.log(patron)
         dispatch(getPatrons()); 
     });
 }; 

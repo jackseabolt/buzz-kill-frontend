@@ -14,7 +14,6 @@ export class NewPatronForm extends React.Component {
     
     handleFormSubmit(event) {
         event.preventDefault(); 
-        console.log("handleFormSubmit ran");
         const {gender} = this.form;
         this.props.dispatch(clearError())
             this.props.dispatch(addPatron(this.tableInput.value, this.seatInput.value, gender.value))
@@ -35,7 +34,6 @@ export class NewPatronForm extends React.Component {
     }
 
     handleDeleteAll() {
-        console.log("This ran")
         this.props.dispatch(deleteAll())
     }
     
@@ -58,7 +56,7 @@ export class NewPatronForm extends React.Component {
                             <input type="radio" className="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
                             <input type="radio" className="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
                         </div>
-                        <button className="button_blue" type="submit">Add Patron</button>
+                        <button className="button_blue testing-submit" type="submit">Add Patron</button>
                         <button className="button_red" onClick={() => this.handleFormToggle()}>Close</button>
                     </form>
                 </div>
