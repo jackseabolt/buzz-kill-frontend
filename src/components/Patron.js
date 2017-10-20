@@ -15,10 +15,6 @@ export class Patron extends React.Component {
         audio.play();
     }
 
-    handleFormToggle(){
-        this.setState({formDisplayed: !this.state.formDisplayed})
-    }
-
     handleDeletePatron() {
         const audio = this.audioPlayer2; 
         audio.play();
