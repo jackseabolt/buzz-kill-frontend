@@ -48,7 +48,7 @@ export class Patron extends React.Component {
         if(this.props.bac > 12.1) {
             callTaxi = (
                 <a href="tel:+15105934577">
-                    <button className='button_red'>Call Taxi <i className="fa fa-taxi" aria-hidden="true"></i></button>
+                    <button className='button_red_patron'>Call Taxi <i className="fa fa-taxi" aria-hidden="true"></i></button>
                 </a>
             )
         }

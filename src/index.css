@@ -50,5 +50,23 @@ body {
 }
 
 .button_red:hover {
+  background-color: #AF2727; 
+}
+
+.button_red_patron {
+  display: inline-block; 
+  color: white; 
+  padding: 10px 15px; 
+  border: 0px;
+  font-size: 14px;  
+  background-color: #a04343; 
+  border-radius: 5px; 
+  margin: auto; 
+  transition: 0.3s;  
+  cursor: pointer; 
+  margin-left: 5px; 
+}
+
+.button_red_patron:hover {
   background-color: #772C2C; 
 }

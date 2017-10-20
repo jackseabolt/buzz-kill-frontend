@@ -43,6 +43,7 @@ describe('<NewPatronForm />', () => {
         form.simulate('submit');
         expect(spy).toHaveBeenCalled();
     }); 
+    
     it('dispatches addPatron on submit', () => {
         const spy = jest.fn(); 
         const wrapper = mount(<NewPatronForm dispatch={spy} />); 
