@@ -62,10 +62,7 @@ export class Patron extends React.Component {
                     <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
                     <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
                     <p>{this.props.seatString}</p>
-                    {/* <p>TABLE: {this.props.table}</p> */}
-                    {/* <p>SEAT: {this.props.seat}</p> */}
                     {drinkDisplay}
-                    {/* <i className="fa fa-plus" onClick={() => this.handleFormToggle()} aria-hidden="true"></i> */}
                     <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
                 </div>
                 <div className="clear"></div>
