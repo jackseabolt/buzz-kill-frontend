@@ -32,12 +32,12 @@ export const HANDLE_ERROR = 'HANDLE_ERROR';
 export const handleError = err => ({
     type: HANDLE_ERROR, 
     err
-})
+});
 
 export const CLEAR_ERROR = 'CLEAR_ERROR'; 
 export const clearError = () => ({
     type: CLEAR_ERROR
-})
+});
 
 export const RENDER_PATRONS = 'RENDER_PATRONS'; 
 export const renderPatrons = patrons => ({
