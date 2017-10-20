@@ -29,69 +29,6 @@ describe('<NewPatronForm />', () => {
         button2.simulate('click'); 
         expect(wrapper.state('formDisplayed')).toEqual(false); 
     }); 
-    it('dispatches clearError action on every form submit', () => {
-        const spy = jest.fn(); 
-        let wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance();
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(false); 
-        expect(wrapper.state('formDisplayed')).toEqual(false);
-        const button = wrapper.find('.button_blue'); 
-        button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true); 
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        const form = wrapper.find('.form'); 
-        form.simulate('submit');
-        expect(spy).toHaveBeenCalled();
-    }); 
-    
-    it('dispatches addPatron on submit', () => {
-        const spy = jest.fn(); 
-        const wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance(); 
-        const button = wrapper.find('.button_blue'); 
-        button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true)
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        // const submitBtn = wrapper.find('.testing-submit'); 
-        // submitBtn.simulate('click');
-        // expect(spy).toHaveBeenCalled();
-    }); 
-    it('clears input values when given appropriate input', () => {
-        const spy = jest.fn(); 
-        const wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance(); 
-        const button = wrapper.find('.button_blue'); 
-        button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true)
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        // const submitBtn = wrapper.find('.testing-submit'); 
-        // submitBtn.simulate('click');
-        // expect(spy).toHaveBeenCalled();
-    }); 
-    it('displays error when given letters instead of numbers', () => {
-        const spy = jest.fn(); 
-        const wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance(); 
-        const button = wrapper.find('.button_blue'); 
-        button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true)
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        // const submitBtn = wrapper.find('.testing-submit'); 
-        // submitBtn.simulate('click');
-        // expect(spy).toHaveBeenCalled();  
-    }); 
-    it('displays error when missing input', () => {
-        const spy = jest.fn(); 
-        const wrapper = mount(<NewPatronForm dispatch={spy} />); 
-        wrapper.instance(); 
-        const button = wrapper.find('.button_blue'); 
-        button.simulate('click'); 
-        expect(wrapper.state('formDisplayed')).toEqual(true)
-        expect(wrapper.containsMatchingElement(<button className="button_blue testing-submit" type="submit">Add Patron</button>)).toEqual(true); 
-        // const submitBtn = wrapper.find('.testing-submit'); 
-        // submitBtn.simulate('click');
-        // expect(spy).toHaveBeenCalled();
-    }); 
     it('contains a button that triggers handleDeleteAll method', () => {
         const spy = jest.fn()
         const wrapper = mount(<NewPatronForm dispatch={spy} />); 

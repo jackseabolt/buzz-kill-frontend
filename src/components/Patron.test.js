@@ -52,7 +52,7 @@ describe('<Patron />', () => {
     it('contains call taxi button is patron has bac above 12', () => {
         const wrapper = mount(<Patron drinks={[]} bac={15} />); 
         wrapper.instance(); 
-        expect(wrapper.containsMatchingElement(<button className='button_red'>Call Taxi <i className="fa fa-taxi" aria-hidden="true"></i></button>)).toEqual(true);
+        expect(wrapper.containsMatchingElement(<button className='button_red_patron'>Call Taxi <i className="fa fa-taxi" aria-hidden="true"></i></button>)).toEqual(true);
     }); 
     it('displays the patron time on site', () => {
         const wrapper = mount(<Patron drinks={[]} timeOnSite={'1:00'} />); 

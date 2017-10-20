@@ -76,9 +76,5 @@ export class Patron extends React.Component {
         )
     }
 } 
-
-export const mapStateToProps = state => ({
-
-}); 
     
-export default connect(mapStateToProps)(Patron); 
+export default connect()(Patron); 
