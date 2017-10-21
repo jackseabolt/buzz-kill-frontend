@@ -1,4 +1,5 @@
 import { REACT_APP_API_URL } from '../config';
+import 'whatwg-fetch'; 
  
 export const ADD_PATRON = 'ADD_PATRON';
 export const addPatron = (table, seat, gender, start) => dispatch => {
