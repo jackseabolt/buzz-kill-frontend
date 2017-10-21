@@ -1,6 +1,6 @@
 <p align="center"><img src="/img/logo.jpg" height="120" /></p>
 <h1>FRONT-END</h1>
-<p><em>This document provides general information on the Buzz-Kill app and details on the api.  For more information about the Buzz-Kill API, please see <a href="https://github.com/brianjb-lfl/buzz-kill-back/blob/master/README.md">Buzz-Kill back end</a>.</em></p>
+<p><em>This document provides general information on the Buzz-Kill client-side application.  For more information about the Buzz-Kill API, please see <a href="https://github.com/brianjb-lfl/buzz-kill-back/blob/master/README.md">Buzz-Kill back end</a>.</em></p>
 
 
 Why Buzz-Kill
