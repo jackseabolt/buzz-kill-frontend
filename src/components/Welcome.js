@@ -1,18 +1,23 @@
 import React from 'react';
 import './Welcome.css';
 
-function Welcome() {
+class Welcome extends React.Component {
+    handleButton() {
+        this.props.onHandleWelcome(); 
+    }
 
-    return (
-      <div className="welcome">
-        <p>Welcome to Buzz Kill!<br />Do you own a restaurant or bar 
-        where alcohol is served? Buzz Kill is an internet applciation 
-        that helps businesses track their customer's alcohol intake. 
-        <br />
-        </p>
-        <button className="button_red top_spacing">Get Started</button>
-      </div>
-    );
+    render() {
+        return (
+        <div className="welcome">
+            <p>Buzz Kill is an application designed to help businesses 
+                track their customers' alcohol intake. Simply create a record for your patron and 
+                add drinks as they are served. Buzz Kill takes care of the rest!
+            <br />
+            </p>
+            <button onClick={() => this.handleButton()} className="button_blue top_spacing">Get Started</button>
+        </div>
+        );
+    }
 }
 
 export default Welcome;

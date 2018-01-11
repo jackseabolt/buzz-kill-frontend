@@ -6,7 +6,8 @@
 }
 
 .welcome p {
-    line-height: 150%; 
+    line-height: 150%;
+    color: rgb(70, 70, 70);  
 }
 
 .top_spacing {

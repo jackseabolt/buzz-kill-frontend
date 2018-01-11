@@ -11,10 +11,15 @@ class App extends React.Component {
       welcome: true
     }
   }
+
+  handleWelcome() {
+    this.setState({ welcome: false})
+  }
+
   render() {
     let display; 
     if(this.state.welcome) {
-      display = <Welcome />; 
+      display = <Welcome onHandleWelcome={() => this.handleWelcome()}/>; 
     } 
     else {
       display =  <div><NewPatronForm /><Board /></div>
