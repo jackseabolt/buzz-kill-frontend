@@ -2,15 +2,21 @@ import React from 'react';
 import NewPatronForm from './NewPatronForm';  
 import Board from './Board'; 
 import Welcome from './Welcome'; 
+import { connect } from 'react-redux'; 
+import { getPatrons } from '../actions'; 
 import { Transition } from 'react-transition-group'; 
 import './App.css';
 
-class App extends React.Component {
+export class App extends React.Component {
   constructor(props) {
     super(props); 
     this.state = {
       welcome: true
     }
+  }
+
+  componentDidMount() {
+    this.props.dispatch(getPatrons()); 
   }
 
   handleWelcome() {
@@ -52,4 +58,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default connect()(App);
