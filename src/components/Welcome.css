@@ -11,7 +11,8 @@
 .welcome p {
     line-height: 150%;
     font-size: 17px; 
-    color: rgb(102, 102, 102);  
+    color: rgb(102, 102, 102);
+    font-family: 'Roboto Condensed', sans-serif;  
 }
 
 .top_spacing {
