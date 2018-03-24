@@ -5,12 +5,13 @@
     margin-top: 30px; 
     padding: 50px; 
     border-radius: 4px;  
-    background-color: rgb(247, 247, 247); 
+    background-color: rgb(240, 240, 240); 
 }
 
 .welcome p {
     line-height: 150%;
-    color: rgb(92, 92, 92);  
+    font-size: 17px; 
+    color: rgb(102, 102, 102);  
 }
 
 .top_spacing {
