@@ -2,6 +2,7 @@ import React from 'react';
 import NewPatronForm from './NewPatronForm';  
 import Board from './Board'; 
 import Welcome from './Welcome'; 
+import { Transition } from 'react-transition-group'; 
 import './App.css';
 
 class App extends React.Component {
@@ -17,6 +18,17 @@ class App extends React.Component {
   }
 
   render() {
+    // transition styles 
+    const duration = 500;
+    const defaultStyle = {
+        opacity: 0,
+        transition: `opacity ${duration}ms ease-in-out`
+    }
+    const transitionStyles = {
+        entering: { opacity: 0 },
+        entered: { opacity: 1 }
+    }
+
     let display; 
     if(this.state.welcome) {
       display = <Welcome onHandleWelcome={() => this.handleWelcome()}/>; 
@@ -25,10 +37,17 @@ class App extends React.Component {
       display =  <div><NewPatronForm /><Board /></div>
     }
     return (
-      <div className="App">
-        <img className="logo" src={require('../logo.jpg')} alt="logo" />
-        {display}
-      </div>
+      <Transition in={true} timeout={duration} appear={true}>
+      {(state) => (
+          <div className="App" style={{
+              ...defaultStyle,
+              ...transitionStyles[state]
+          }}>
+            <img className="logo" src={require('../logo.jpg')} alt="logo" />
+            {display}
+          </div>
+        )}
+      </Transition>
     );
   }
 }
