@@ -1,4 +1,5 @@
 import React from 'react'; 
+import { Transition } from 'react-transition-group'; 
 import { connect } from 'react-redux'; 
 import { addDrink } from '../actions'; 
 import { deletePatron } from '../actions'; 
@@ -22,6 +23,18 @@ export class Patron extends React.Component {
     }
 
     render(){
+        // transtion styles  
+        const duration = 300;
+        const defaultStyle = {
+            opacity: 0,
+            transition: `opacity ${duration}ms ease-in-out`
+        }
+        const transitionStyles = {
+            entering: { opacity: 0 },
+            entered: { opacity: 1 }
+        }
+
+        // BAC styles
         let patronBac = this.props.bac; 
         let color; 
         if(patronBac <= 3) {
@@ -53,26 +66,33 @@ export class Patron extends React.Component {
             )
         }
         return (
-            <div className={color}>
-                <div className="left">
-                    <h1>{this.props.bac}</h1>
-                    { callTaxi }
-                </div>
-                <div className="right">
-                    <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
-                    <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
-                    <p>{this.props.seatString}</p>
-                    {drinkDisplay}
-                    <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
-                </div>
-                <div className="clear"></div>
-                <audio ref={audio => this.audioPlayer = audio} >
-                    <source src="./sounds/pour.m4a" type="audio/mp4" />
-                </audio>
-                <audio ref={audio => this.audioPlayer2 = audio} >
-                    <source src="./sounds/crush.m4a" type="audio/mp4" />
-                </audio>
-            </div>
+            <Transition in={true} timeout={duration} appear={true}>
+                {(state) => (
+                    <div className={color} style={{
+                        ...defaultStyle,
+                        ...transitionStyles[state]
+                    }}>
+                        <div className="left">
+                            <h1>{this.props.bac}</h1>
+                            { callTaxi }
+                        </div>
+                        <div className="right">
+                            <i className="fa fa-times close" onClick={event => this.handleDeletePatron()} aria-hidden="true"></i>
+                            <h4>TIME SINCE START: {this.props.timeOnSite}</h4>
+                            <p>{this.props.seatString}</p>
+                            {drinkDisplay}
+                            <i className="fa fa-plus" onClick={event => this.handleFormSubmit(event)} aria-hidden="true"></i>
+                        </div>
+                        <div className="clear"></div>
+                        <audio ref={audio => this.audioPlayer = audio} >
+                            <source src="./sounds/pour.m4a" type="audio/mp4" />
+                        </audio>
+                        <audio ref={audio => this.audioPlayer2 = audio} >
+                            <source src="./sounds/crush.m4a" type="audio/mp4" />
+                        </audio>
+                    </div>
+                )}
+            </Transition>
         )
     }
 } 
