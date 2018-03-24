@@ -1,15 +1,30 @@
 .welcome {
-    width: 300px; 
+    width: 270px; 
     margin-left: auto; 
     margin-right: auto;
-    padding: 10px 0px 50px 0px; 
+    margin-top: 30px; 
+    padding: 50px; 
+    border-radius: 4px;  
+    background-color: rgb(247, 247, 247); 
 }
 
 .welcome p {
     line-height: 150%;
-    color: rgb(70, 70, 70);  
+    color: rgb(92, 92, 92);  
 }
 
 .top_spacing {
     margin-top: 30px; 
+}
+
+@media screen and (max-width: 500px) {
+    .welcome {
+        width: calc(100% - 100px); 
+        margin-left: auto; 
+        margin-right: auto;
+        margin-top: 0px; 
+        padding: 50px; 
+        border-radius: 4px;  
+        background-color: white;  
+    }
 }
