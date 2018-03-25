@@ -49,8 +49,8 @@ export class NewPatronForm extends React.Component {
                 <div className="newPatronForm">
                     {formError}
                     <form onSubmit={e => this.handleFormSubmit(e)} ref={form => this.form = form} className="form" > 
-                        <input className="input" placeholder="Table #" ref={input => this.tableInput = input} />
-                        <input className="input" placeholder="Seat #" ref={input => this.seatInput = input} />
+                        <input className="input" placeholder="Table" ref={input => this.tableInput = input} />
+                        <input className="input" placeholder="Seat" ref={input => this.seatInput = input} />
                         <div className="radio-button-container">
                             <input type="radio" className="radio" name="gender" value="male" id="male" /><label htmlFor="male">Male</label>
                             <input type="radio" className="radio" name="gender" value="female" id="female" /><label htmlFor="female">Female</label>
