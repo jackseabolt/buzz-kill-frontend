@@ -9,7 +9,7 @@ class Welcome extends React.Component {
     render() {
         return (
         <div className="welcome">
-            <p className="welcome-p">Welcome! Buzz Kill is an application for tracking the blood alcohol content of bar patrons. Simply create a record for your patron and 
+            <p className="welcome-p">Welcome! Buzz Kill is an application for tracking the blood alcohol content of bar patrons. Simply create a record for your customer and 
                 add drinks as they are served. Buzz Kill takes care of the rest!
             <br />
             </p>
